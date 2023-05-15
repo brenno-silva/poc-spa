@@ -1,0 +1,51 @@
+<script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script>
+<single-spa-router>
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+
+  <nav>
+    <a style="margin: 10px;" href="/">Home</a>
+    <a style="margin: 10px;" href="/aApp">aApp</a>
+    <a style="margin: 10px;" href="/bApp">bApp</a>
+  </nav>
+  <route path="aApp">
+    <application name="@a-app"></application>
+  </route>
+  <route path="bApp">
+    <application name="@b-app"></application>
+  </route>
+
+  <main>
+    <route default>
+      <table style="width: 100%;">
+        <tr>
+          <th style="width: 50%;"><h1>aApp</h1></th>
+          <th style="width: 50%;"><h1>bApp</h1></th>
+        </tr>
+        <tr>
+          <td>
+            <application name="@a-app"></application>
+          </td>
+          <td>
+            <application name="@b-app"></application>
+          </td>
+        </tr>
+      </table>
+    </route>
+  </main>
+</single-spa-router>
